@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log(Object.prototype);
+        //prototype is a property of constructor object which contain some methods ,you can add yours function , but dont change the Object prototype  
+        var devesh={
+            name:"dsfsdf",
+            class:12
+        }
+        
+        function obj(tempname,tempage){
+            this.name=tempname;
+            this.age=tempage;
+
+        }
+        let obj1=new obj("devesh",20);
+        //it can be defined as a property of constructor function only
+        //not any object
+        obj.prototype.getnameandage=function(){
+            console.log(`name is ${this.name} and age is ${this.age}`);
+        }
+
+        //javascript first lool for the method on the obj1 object itself, but does not find it, then it will look at the obj constructor function prototype
+        console.log(obj.prototype);
+        obj1.getnameandage();
+
+    </script>
+</body>
+</html>

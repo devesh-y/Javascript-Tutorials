@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="student"></div>
+    <script>
+        let obj={
+            name:"bhondu",
+            age:30
+        };
+        let students=[obj];
+        function getstudents(){
+            
+                let str="";
+                students.forEach((temp)=>{
+                    str+=`<li>${temp.name}</li>`;
+                });
+                document.getElementById("student").innerHTML=str;
+                console.log("students have been fetched");
+            
+        };
+        function enrollstudent(temp,getstudents){
+            
+                students.push(temp);
+                console.log("student has been enrolled");
+                getstudents();
+            
+        }
+        //just forget the callback function try to think that you want to update the database then write the all students
+        //without the callback function you would not be able to show the new oject in the array that currently added
+        enrollstudent({name:"devesh",age:20},getstudents);
+        // getstudents();
+
+    </script>
+</body>
+</html>

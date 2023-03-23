@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str="my name is devesh devesh";
+        let re=/eve/;
+        let result=re.exec(str);           //it iterate if elements present more than 1
+        console.log(result);
+        console.log(result.input);  //the main string
+        console.log(result.index);
+        result=re.exec(str);
+        console.log(result);
+        re=/devesh/g;   // by g it shows the all elemens
+        result=re.exec(str);
+        console.log(result);
+        result=re.exec(str);
+        console.log(result); //it iterates itself
+        result=re.exec(str);
+        console.log(result);//it shows null if not found
+
+
+
+
+        let again=/devesh/i;     //this means case insensitive
+        str="devESH devesh";
+        console.log(again.test(str));// gives true or false
+        
+
+
+
+
+        again=/devesh/gi; //it uses both global and insensitive
+
+        console.log(str.match(again)); //match provides array
+        
+
+
+
+        let mystr="devesh devesh";
+        let reg=/devesh/g;
+        let myresult=mystr.search(reg);
+        console.log(mystr.search(reg)); //return index of first matching only  or other wise return -1 if not avialable
+
+        
+        
+        let tostr="devesh devesh hghjghjg j";
+        let myreg=/devesh/g;
+        console.log(tostr.replace(myreg,'hooo'));
+        console.log(tostr);
+        
+           
+     
+
+
+    </script>
+</body>
+</html>

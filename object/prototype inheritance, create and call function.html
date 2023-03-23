@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: "newname"
+        }
+
+        let devesh = Object.create(obj);//used to create a new object with specified prototype object & properties
+        devesh.name = "dev";//then adding new properties
+        devesh.age = 20;
+        console.log(devesh);
+
+        let newobj = Object.create(obj, {
+            name: { value: "bhondu", writable: true },
+            age: { value: 50 }
+        });
+
+
+        function employee(name, salary, exp) {
+            this.name = name;
+            this.salary = salary;
+            this.exp = exp;
+        }
+
+        employee.prototype.saymyname = function () {
+            console.log("i am the best");
+        }
+        function programmer(name, salary, exp, language) {
+            //to get the properties of another constructor function
+            employee.call(this, name, salary, exp);    //first argument is the object and the other parameters are the argument of the function called
+            this.language = language;
+        }
+
+        programmer.prototype=Object.create( employee.prototype);//this line helps the programmer constructor to use the prototype of employee constructor
+
+        let rohan =new programmer("devesh",20000,2,"javascript");
+        console.log(rohan);
+        console.log(typeof rohan);
+        rohan.saymyname();
+    </script>
+</body>
+
+</html>

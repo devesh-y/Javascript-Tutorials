@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .new{
+        color: red;
+    }
+    .back{
+        background-color: beige;
+        font-size: 2em;
+    }
+    </style>
+    
+</head>
+<body>
+    <div id="newid">
+        hello my name is devesh
+    </div>
+    <script>
+        document.getElementsByTagName("div")[0].classList.add("new");
+        document.getElementsByTagName("div")[0].classList.add("back");
+        
+        document.write(document.getElementById("newid").getAttribute("class"));
+        document.getElementsByTagName("div")[0].classList.remove("back");
+        document.write("<br>"+document.getElementById("newid").getAttribute("class"));
+        
+        // placeholder.classList.contains('third')
+
+    </script>
+</body>
+</html>

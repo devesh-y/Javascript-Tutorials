@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="go" onclick="func()">click here to go back to previous page</div>
+    <script>
+        function func(){
+            var decision=confirm("do you want to go back");
+            if(decision==true)
+            {
+                history.back();
+            }
+        }//or if i write history.go(-2);        then it will step 2 times to the back
+    </script>
+</body>
+</html>

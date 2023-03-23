@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //symbol is used to generate a unique primitive   
+        let sym=Symbol('me devesh');// we cannot use new because Symbol is not a constructor
+        let sym2=Symbol('me devesh');
+        console.log(sym);
+        console.log(sym===sym2);
+        //Every Symbol() call is guaranteed to return a unique Symbol.
+        let obj2={
+
+        }
+        obj2[sym]="mymy";
+        obj2[sym2]="deve";
+        console.log(obj2);
+
+
+        let obj={
+            
+        }
+        obj[sym]="devesh";
+        obj["name"]="sdfsafdsaf";
+        console.log(obj);
+
+        //this loop will ignore the symbols
+        for(let k in obj){
+            console.log(obj[k],k);
+        }
+      
+
+        //on converting to JSON it also ignore symbol
+        let js=JSON.stringify(obj);
+        console.log(js);
+        console.log(JSON.parse(js));
+    </script>
+</body>
+</html>

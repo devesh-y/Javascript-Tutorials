@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p is="my"> </p>
+    <script>
+var hello={
+    name:"devesh"
+    
+};
+alert(hello);
+    var person1 = {
+    toLocaleString : function () 
+    {
+        return "Nikolaos";
+    },
+    
+    toString : function() {
+        return "Nicholas";
+        }
+   
+    };
+    var person2 = {
+        toString : function() 
+        {
+            return "Greg";
+        },
+        toLocaleString : function () 
+        {
+            return "Grigorios";
+        }
+        
+      
+    }; 
+    people=[person1,person2]; 
+    alert(people); //Nicholas,Greg
+    alert(people.toString()); //Nicholas,Greg                   
+    alert(people.toLocaleString());
+
+
+    var tothe={
+        func1:function()
+        {
+            return "devesh";
+        }
+    };
+    var tohe={
+        func1:function()
+        {
+            return "yadav";
+        }
+    };
+    my2=[tothe,tohe];
+    alert(my2[0].func1());
+    
+</script>
+</body>
+</html>

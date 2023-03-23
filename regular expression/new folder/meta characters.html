@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let regex=/^dev/;    //whole string starts with dev
+        let str="my devaaaaaaaa  dsfs sfda";
+        console.log(regex.test(str));
+
+        let end=/aaaa$/;     //whole string end with aaaa
+        console.log(end.test(str));
+
+        let x=/ds.s/; // . matches with exactly
+        console.log(x.test(str));
+
+        x=/dev*a/ ; //match with 0 or more character
+        console.log(x.test(str));
+
+        x=/dev?aa*a/; //v is optional (the character before ?)
+        // v may or may be
+        console.log(x.test(str));
+
+        //sometimes it is possible if you want to test the * character 
+        //so in that case use the escape sequences \(backslash) as \*
+    </script>
+</body>
+</html>

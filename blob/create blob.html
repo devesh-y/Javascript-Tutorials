@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!--A blob object is simply a group of bytes that holds the data stored in a file-->
+    <button>download</button>
+    <script>
+        document.querySelector("button").addEventListener("click",()=>{
+
+            //blob format is var abc = new Blob(["Blob Content"],{type: Blob Property containing MIME property})
+            const x=new Blob(["my name is devesh"],{type: "text/plain"});
+            var el=document.createElement("a");
+            el.href=URL.createObjectURL(x);
+            el.download="myfile";
+            el.click();
+        })
+       
+    </script>
+</body>
+</html>

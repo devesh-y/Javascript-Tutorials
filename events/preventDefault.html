@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://google.com" method="post">
+        <button type="submit" id="mylist" class="make">submit</button>
+    </form>
+    <script>
+        
+        document.getElementById("mylist").addEventListener("click",func);
+     
+        function func(b){
+            console.log(b.target);
+           b.preventDefault();//simply means it will stop the default events 
+             //it will stop the default function of elements 
+           //here the submit button redirect to google.com but this script wont let it happen
+            
+        };
+    </script>
+</body>
+</html>

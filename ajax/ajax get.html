@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="fetch">fetch</button>
+    <script>
+        document.getElementById("fetch").addEventListener("click",function(){
+            const xhr=new XMLHttpRequest();
+            xhr.open('GET','https://jsonplaceholder.typicode.com/posts',true); //true here means async
+            xhr.onprogress=function(){
+                console.log("in progress");
+            }
+
+            xhr.onreadystatechange=function(){
+                console.log(`ready state is ${this.readyState}`);
+            }
+
+
+            xhr.onload=function(){ //on complete
+                if(this.status===200){  //200 is the status code of http
+                    const obh=JSON.parse(this.responseText);
+                    console.log(obh);
+                }
+                else {
+                    console.log("some error occur in accessing the file");
+                }
+            }
+            xhr.send();
+
+        });
+    </script>
+</body>
+</html>

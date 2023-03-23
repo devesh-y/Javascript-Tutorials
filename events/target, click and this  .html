@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mylist" title="mytitle" class="make">to make ka dsjfk jdk slfj</div>
+    <div id="double">double click will work</div>
+    <div id="mousedown">when mouse button is pressed</div>
+  
+ 
+    <script>
+          
+        var a=document.getElementById("mylist");
+        document.getElementById("mylist").addEventListener('click',function(a) { //this a denote to event , even you can if possible write the exact name of event property as a parameter
+            console.log(event);//this "event" proper word will  be remembered
+            console.log(a);
+            console.log(a.offsetX);
+            console.log(a.offsetY);//where you click wrt the element
+            console.log(a.clientX);//where you click wrt the browser window
+            console.log(a.target.title);
+            console.log(a.target);
+            console.log(this.classList);
+            console.log("heallo myd");
+        });
+        //pagex, screenx
+        document.getElementById("double").addEventListener('dblclick',function(e){
+           console.log("double clikces") 
+        });
+        document.getElementById("mousedown").addEventListener('mousedown',function(a){
+            this.style.color="red";
+        });
+        document.getElementById("mousedown").addEventListener('mouseup',function(a){
+            this.style.color="green";
+        });
+        document.getElementById("mousedown").addEventListener('mouseenter',function(a){
+            this.style.color="yellow";
+        });
+        document.getElementById("mousedown").addEventListener('mouseleave',function(a){
+            this.style.color="brown";
+        });
+        document.getElementById("mousedown").addEventListener('mousemove',function(a){
+            console.log("mouse moved");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="fetch">fetch</button>
+    <script>
+        document.getElementById("fetch").addEventListener("click",function(){
+            const xhr=new XMLHttpRequest();
+            xhr.open('POST','https://jsonplaceholder.typicode.com/users',true); //true here means async
+            xhr.setRequestHeader("content-type", "application/json");// setRequestHeader  ->    it specifies the data you want to send
+            // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//for text data
+            
+            xhr.onprogress=function(){
+                console.log("in progress");
+            }
+
+            xhr.onreadystatechange=function(){
+                console.log(`ready state is ${this.readyState}`);
+            }
+
+
+            xhr.onload=function(){ //on complete
+                if(this.status>=400){  //200 is the status code of http
+                    console.log("some error occur in accessing the file");
+                }
+                else {
+                    console.log(`status is ${this.status}`);
+                    // let data=JSON.parse(this.responseText);
+                    console.log(this.responseText);
+                    console.log(JSON.parse(this.responseText));
+                    console.log(this.response);
+                    console.log(JSON.parse(this.response));
+                }
+            }
+            let tosend={name:"devesh",age:45};
+            tosend=JSON.stringify(tosend);
+            xhr.send(tosend);
+
+        });
+    </script>
+</body>
+</html>

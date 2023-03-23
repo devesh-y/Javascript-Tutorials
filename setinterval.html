@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hello">there will be a line below in every 2 second interval<br></div>
+    <script>
+        var str="this is the line ";
+        
+        function furu(msg){
+            var text=document.createTextNode(msg);
+            document.getElementById("hello").appendChild(text);
+        }
+        
+        var some=setInterval(furu,2000,str);//str is the argument and you can have more arguments also
+
+
+        //here this below line dont allow the method to work
+        //clearInterval(some);
+        
+    </script>
+</body>
+</html>

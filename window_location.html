@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hello">the location of your page is </div>
+    
+    <script>
+        var locat=window.location;
+        var space=document.createTextNode(" "+locat);
+        document.getElementById("hello").appendChild(space);
+        var loc=location.href;
+        document.write(loc);
+       
+    </script>
+    <p onclick="func();">click here to go to another page</p>
+    <script>
+    function func(){
+        location.href="history_back method.html";
+    }
+    </script>
+
+</body>
+</html>

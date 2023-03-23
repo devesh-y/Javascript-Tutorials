@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let reg=/\wevesh/; // \w repersent a underscore or alphabet or numbers
+        //they are known as word characters
+        let str="devesh sdi sdjfjsi of";
+         console.log(reg.test(str));
+
+
+        reg=/\w+d1r/;     //it means any number of word character before d1r
+        str="sdj%sdf3d1r"; //they are sdf3 because at % it break
+        console.log(reg.test(str));
+
+
+        //if you dont want any word character
+        //you write \W+d1r    here capital w you have to use
+        reg=/\W+d1r/;
+
+
+        reg=/\d999/; //\d represent a digit
+        str="devsh ka number hai 99999999";
+        console.log(reg.test(str));
+
+
+        reg=/\d+999/;    // more than one digit following with 999
+        reg=/\D+999/;  //it means non-digit
+
+        
+
+        reg=/\scar/;  // \s repsent space
+
+        reg=/\Scar/; // non space characters
+
+
+        reg=/car\b/; //\b means a word boundary
+        //means a new word start after car 
+
+        // there can be 1 space or more 
+        str="in the car    to ds";
+        console.log(reg.test(str));
+
+
+
+
+        reg=/dee(?=a)/; // after dee there should be a
+        reg=/dee(?!a)/ //after dee there should not be a 
+    </script>
+</body>
+</html>

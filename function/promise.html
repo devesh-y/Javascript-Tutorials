@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="student"></div>
+    <script>
+        let obj={
+            name:"bhondu",
+            age:30
+        };
+        let students=[obj];
+        function getstudents(){
+            setTimeout(() => {
+                let str="";
+                students.forEach((temp)=>{
+                    str+=`<li>${temp.name}</li>`;
+                });
+                document.getElementById("student").innerHTML=str;
+                console.log("students have been fetched");
+            }, 3000);
+        };
+        function enrollstudent(temp){
+           
+            return new Promise(function(resolve,reject){
+                setTimeout(() => {
+                students.push(temp);
+                console.log("student has been enrolled");
+                const error=false;
+                if(!error){
+                    resolve("yes its completed");
+                }
+                else{
+                    reject("i reject it");
+                }
+            }, 1000);
+            })
+        }
+        enrollstudent({name:"devesh",age:20}).then(function(message){
+            console.log(message);
+            getstudents();
+        }).catch(function(error){
+            console.log("some error occured- " + error);
+        })
+    </script>
+</body>
+</html>

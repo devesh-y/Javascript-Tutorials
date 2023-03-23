@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function iterator(array) {
+            let nextindex = 0;
+            return {
+                next: function () {
+                    if (nextindex < array.length) {
+                        return {
+                            value: array[nextindex++],
+                            done: false
+                        }
+                    }
+                    else {
+                        return {
+                            done: true
+                        }
+                    }
+                }
+            }
+        }
+
+        let myarr = ["Sdfsdfa", "sdafsa sa", 454, 'v'];
+        
+        let devarray=iterator(myarr);
+        console.log(devarray.next());
+        console.log(devarray.next());
+        console.log(devarray.next());
+        console.log(devarray.next());
+        console.log(devarray.next());
+    </script>
+</body>
+
+</html>
