@@ -9,8 +9,8 @@ outerloop: while (true)
 	innerloop: while (a < 3) 
     {
 		sum += a;
-		if (sum > 12) {
-
+		if (sum > 12) 
+		{
 			// Break outer loop from inner loop
 			break outerloop;
 		}
