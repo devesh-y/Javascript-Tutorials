@@ -1,3 +1,12 @@
+const name = "myProperty";
+//here we define a property name
+//and then using it as a key
+const myObject = {
+  [name]: "3434"
+};
+console.log(myObject[name]);
+
+
 var myobject={
     name:"devesh",
     age:20, 
